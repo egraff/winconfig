@@ -15,8 +15,11 @@ error () {
 }
 
 echo
-echo -------------------------------------------------------
-echo Running Ansible (will prompt for username and password)
-echo -------------------------------------------------------
+echo "-------------------------------------------------------"
+echo "Running Ansible (will prompt for username and password)"
+echo "-------------------------------------------------------"
 
 ansible-playbook site.yml -v
+
+echo "DONE!"
+read -n 1 -s -r -p "Press any key to continue..."

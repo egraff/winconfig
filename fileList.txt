@@ -33,6 +33,7 @@ usr/bin/msys-crypt-0.dll
 usr/bin/msys-crypto-1.1.dll
 usr/bin/msys-curl-4.dll
 usr/bin/msys-expat-1.dll
+usr/bin/msys-ffi-7.dll
 usr/bin/msys-gcc_s-seh-1.dll
 usr/bin/msys-gssapi-3.dll
 usr/bin/msys-hcrypto-4.dll

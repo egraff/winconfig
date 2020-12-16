@@ -25,7 +25,7 @@ install:
   - ps: Get-Process | Where-Object { $_.Path -like "${env:MSYS2_DIR}*" } | Stop-Process
   - '%MSYS2_ASH% -c "/usr/bin/rebaseall -v"'
 
-  - '%MSYS2_BASH% --login -c "python3 -mpip install \'pywinrm>=0.3.0\'"'
+  - '%MSYS2_BASH% --login -c "python3 -mpip install ''pywinrm>=0.3.0''"'
   - '%MSYS2_BASH% --login -c "python3 -mpip install ansible"'
 
   - ps: Get-Process | Where-Object { $_.Path -like "${env:MSYS2_DIR}*" } | Stop-Process

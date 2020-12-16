@@ -42,13 +42,13 @@ mkdir msys64
 sed 's/\r//g' "$SHARE"/fileList.txt | while read -r filepath || [ -n "$filepath" ]
 do
   # do something with $filepath here
-  rsync --archive --relative -v --progress --exclude "*.pyc" --exclude "*/__pycache__" --exclude "*/python3.8/test" /./${filepath} msys64/
+  rsync --archive --relative --exclude "*.pyc" --exclude "*/__pycache__" --exclude "*/python3.8/test" /./${filepath} msys64/
 done
 
 sed 's/\r//g' "$SHARE"/fileList-mingw.txt | while read -r filepath || [ -n "$filepath" ]
 do
   # do something with $filepath here
-  rsync --archive --relative -v --progress --exclude "*.pyc" --exclude "*/__pycache__" --exclude "*/python3.8/test" /mingw64/./${filepath} msys64/
+  rsync --archive --relative --exclude "*.pyc" --exclude "*/__pycache__" --exclude "*/python3.8/test" /mingw64/./${filepath} msys64/
 done
 
 pushd msys64

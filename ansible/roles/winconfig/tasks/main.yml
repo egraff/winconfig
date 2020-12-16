@@ -1,0 +1,6 @@
+---
+- import_tasks: registry_general_tweaks.yml
+
+- import_tasks: windows_update_configuration.yml
+
+- import_tasks: windows_power_settings.yml

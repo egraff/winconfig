@@ -1,0 +1,28 @@
+---
+- name: 'Enable long paths'
+  ansible.windows.win_regedit:
+    path: HKLM:\SYSTEM\ControlSet001\Control\FileSystem
+    name: LongPathsEnabled
+    data: 1
+    type: dword
+
+- name: 'Enable long paths'
+  ansible.windows.win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem
+    name: LongPathsEnabled
+    data: 1
+    type: dword
+
+- name: '.NET: use the "System Default" TLS versions'
+  ansible.windows.win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319
+    name: SystemDefaultTlsVersions
+    data: 1
+    type: dword
+
+- name: '.NET (32-bit): use the "System Default" TLS versions'
+  ansible.windows.win_regedit:
+    path: HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319
+    name: SystemDefaultTlsVersions
+    data: 1
+    type: dword

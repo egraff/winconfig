@@ -32,8 +32,7 @@ cat <<EOF > ${RUN_BAT_SCRIPT_NAME}
 @echo off${CR}
 cd /D "%~dp0"${CR}
 ${CR}
-mkdir ${INSTALLER_NAME}${CR}
-cd ${INSTALLER_NAME}${CR}
+cd ansible${CR}
 ${CR}
 ..\msys64\usr\bin\sh.exe /run.sh${CR}
 EOF
@@ -78,10 +77,11 @@ then
 fi
 
 cp "$SHARE"/run.sh run.sh
-rsync --archive -v "$SHARE"/ansible/ ansible/
 
 # Pop msys64 dir, to get back to $TMPDIR
 popd
+
+rsync --archive -v "$SHARE"/ansible/ ansible/
 
 echo "Creating archive"
 

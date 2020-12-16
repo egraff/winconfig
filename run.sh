@@ -20,3 +20,4 @@ echo YOYOYOYOYOYOYOYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!
 echo -------------------------------------------------------
 
 ansible -v
+ansible-playbook site.yml -v

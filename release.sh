@@ -25,16 +25,6 @@ cd "$TMPDIR"
 
 echo "Copying files"
 
-CR=$'\r'
-cat <<EOF > run.bat
-@echo off${CR}
-cd /D "%~dp0"${CR}
-${CR}
-cd ansible${CR}
-${CR}
-..\msys64\usr\bin\sh.exe /run.sh${CR}
-EOF
-
 mkdir msys64
 
 sed 's/\r//g' "$SHARE"/fileList.txt | while read -r filepath || [ -n "$filepath" ]
@@ -79,6 +69,7 @@ cp "$SHARE"/run.sh run.sh
 # Pop msys64 dir, to get back to $TMPDIR
 popd
 
+cp "$SHARE"/run.ps1 run.ps1
 rsync --archive -v "$SHARE"/ansible/ ansible/
 
 echo "Creating archive"
@@ -91,7 +82,7 @@ cd ..
  echo 'GUIFlags="8+32+64+256+4096"' &&
  echo 'GUIMode="1"' &&
  echo 'OverwriteMode="2"' &&
- echo 'RunProgram="cmd /c \"%%T\msys-rootfs-tmp\run.bat\""' &&
+ echo "RunProgram=\"powershell.exe -WindowStyle Hidden -Command Start-Process -Wait -Verb RunAs powershell.exe -ArgumentList '-ExecutionPolicy ByPass -File \\\"%%T\\msys-rootfs-tmp\\run.ps1\\\"'\"" &&
  echo ';!@InstallEnd@!' &&
  cat "$TMPPACK") > "$TARGET"
 

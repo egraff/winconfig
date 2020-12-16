@@ -19,7 +19,7 @@ install:
   - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed libffi libffi-devel"'
   - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed openssl openssl-devel libcrypt libcrypt-devel"'
   - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed libyaml-devel"'
-  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed tar git openssh"'
+  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed git openssh rsync tar"'
   - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed p7zip"'
 
   - ps: Get-Process | Where-Object { $_.Path -like "${env:MSYS2_DIR}*" } | Stop-Process

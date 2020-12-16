@@ -7,8 +7,6 @@ set -e
 INSTALLER_NAME="winconfig"
 INSTALLER_TITLE="winconfig installation"
 
-RUN_BAT_SCRIPT_NAME="run.bat"
-
 TARGET="$(pwd -L)"/${INSTALLER_NAME}-install.exe
 TMPDIR=/tmp/msys-rootfs-tmp
 OPTS7="-m0=lzma -mx=9 -md=64M"
@@ -28,7 +26,7 @@ cd "$TMPDIR"
 echo "Copying files"
 
 CR=$'\r'
-cat <<EOF > ${RUN_BAT_SCRIPT_NAME}
+cat <<EOF > run.bat
 @echo off${CR}
 cd /D "%~dp0"${CR}
 ${CR}
@@ -89,11 +87,11 @@ cd ..
 /usr/bin/7za a $OPTS7 "$TMPPACK" msys-rootfs-tmp
 (cat "$SHARE"/7zsd_extra/7zsd_All_x64.sfx &&
  echo ';!@Install@!UTF-8!' &&
- echo 'Title="${INSTALLER_TITLE}"' &&
+ echo "Title=\"${INSTALLER_TITLE}\"" &&
  echo 'GUIFlags="8+32+64+256+4096"' &&
  echo 'GUIMode="1"' &&
  echo 'OverwriteMode="2"' &&
- echo 'RunProgram="cmd /c \"%%T\msys-rootfs-tmp\${RUN_BAT_SCRIPT_NAME}\""' &&
+ echo 'RunProgram="cmd /c \"%%T\msys-rootfs-tmp\run.bat\""' &&
  echo ';!@InstallEnd@!' &&
  cat "$TMPPACK") > "$TARGET"
 

@@ -26,3 +26,10 @@
     name: SystemDefaultTlsVersions
     data: 1
     type: dword
+
+- name: 'Disable Hide extensions for known file types'
+  ansible.windows.win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    name: HideFileExt
+    data: 0
+    type: dword

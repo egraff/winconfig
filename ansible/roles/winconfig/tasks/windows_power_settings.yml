@@ -6,7 +6,12 @@
     remote_src: no
 
 - name: 'Grant FullControl to HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes'
-  ansible.windows.win_command: powershell.exe -ExecutionPolicy ByPass -File C:\temp\registry_key_grant_full_control.ps1 -RegistryKeyPath "HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes" -User "BUILTIN\Administrators"
+  ansible.windows.win_command: >-
+    powershell.exe
+      -ExecutionPolicy ByPass
+      -File C:\temp\registry_key_grant_full_control.ps1
+      -RegistryKeyPath "HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes"
+      -User "BUILTIN\Administrators"
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Lid close action -> Plugged in: Do nothing'
   ansible.windows.win_regedit:

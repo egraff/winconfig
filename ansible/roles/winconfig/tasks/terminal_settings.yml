@@ -1,96 +1,96 @@
- ---
- - name: 'Terminal: configure font size (current user)'
+---
+- name: 'Terminal: configure font size (current user)'
   ansible.windows.win_regedit:
     path: HKCU:\Console
     name: FontSize
     data: 0x00100000
     type: dword
 
- - name: 'Terminal: configure font size (default user)'
+- name: 'Terminal: configure font size (default user)'
   ansible.windows.win_regedit:
     path: HKU:\.DEFAULT\Console
     name: FontSize
     data: 0x00100000
     type: dword
 
- - name: "Terminal: don't use legacy console (current user)"
+- name: "Terminal: don't use legacy console (current user)"
   ansible.windows.win_regedit:
     path: HKCU:\Console
     name: ForceV2
     data: 1
     type: dword
 
- - name: "Terminal: don't use legacy console (default user)"
+- name: "Terminal: don't use legacy console (default user)"
   ansible.windows.win_regedit:
     path: HKU:\.DEFAULT\Console
     name: ForceV2
     data: 1
     type: dword
 
- - name: 'Terminal: enable insert mode (current user)'
+- name: 'Terminal: enable insert mode (current user)'
   ansible.windows.win_regedit:
     path: HKCU:\Console
     name: InsertMode
     data: 1
     type: dword
 
- - name: 'Terminal: enable insert mode (default user)'
+- name: 'Terminal: enable insert mode (default user)'
   ansible.windows.win_regedit:
     path: HKU:\.DEFAULT\Console
     name: InsertMode
     data: 1
     type: dword
 
- - name: 'Terminal: enable line selection (current user)'
+- name: 'Terminal: enable line selection (current user)'
   ansible.windows.win_regedit:
     path: HKCU:\Console
     name: LineSelection
     data: 1
     type: dword
 
- - name: 'Terminal: enable line selection (default user)'
+- name: 'Terminal: enable line selection (default user)'
   ansible.windows.win_regedit:
     path: HKU:\.DEFAULT\Console
     name: LineSelection
     data: 1
     type: dword
 
- - name: 'Terminal: enable line wrap (current user)'
+- name: 'Terminal: enable line wrap (current user)'
   ansible.windows.win_regedit:
     path: HKCU:\Console
     name: LineWrap
     data: 1
     type: dword
 
- - name: 'Terminal: enable line wrap (default user)'
+- name: 'Terminal: enable line wrap (default user)'
   ansible.windows.win_regedit:
     path: HKU:\.DEFAULT\Console
     name: LineWrap
     data: 1
     type: dword
 
- - name: 'Terminal: enable quick edit (current user)'
+- name: 'Terminal: enable quick edit (current user)'
   ansible.windows.win_regedit:
     path: HKCU:\Console
     name: QuickEdit
     data: 1
     type: dword
 
- - name: 'Terminal: enable quick edit (default user)'
+- name: 'Terminal: enable quick edit (default user)'
   ansible.windows.win_regedit:
     path: HKU:\.DEFAULT\Console
     name: QuickEdit
     data: 1
     type: dword
 
- - name: 'Terminal: set screen buffer size (current user)'
+- name: 'Terminal: set screen buffer size (current user)'
   ansible.windows.win_regedit:
     path: HKCU:\Console
     name: ScreenBufferSize
     data: 655294584
     type: dword
 
- - name: 'Terminal: set screen buffer size (default user)'
+- name: 'Terminal: set screen buffer size (default user)'
   ansible.windows.win_regedit:
     path: HKU:\.DEFAULT\Console
     name: ScreenBufferSize

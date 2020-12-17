@@ -6,7 +6,7 @@
     remote_src: no
 
 - name: 'Grant FullControl to HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes'
-  ansible.windows.win_command: >-
+  ansible.windows.win_command: >
     powershell.exe
       -ExecutionPolicy ByPass
       -File C:\temp\registry_key_grant_full_control.ps1

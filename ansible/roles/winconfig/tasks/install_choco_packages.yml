@@ -1,50 +1,62 @@
 ---
 - name: 'Install Microsoft Visual C++ Redistributable for Visual Studio 2015-2019'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: vcredist140
 
 - name: 'Install CMake'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: cmake
     install_args: ADD_CMAKE_TO_PATH=System
 
 - name: 'Install Inkscape'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: inkscape
 
 - name: 'Install Ghostscript'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: ghostscript
 
 - name: 'Install Xpdf utils'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: xpdf-utils
 
 - name: 'Install ImageMagick'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: imagemagick
     package_params: LegacySupport=true
 
 - name: 'Install PuTTY'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: putty
 
 - name: 'Install Wireshark'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: wireshark
 
 - name: 'Install VLC'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: vlc
 
 - name: 'Install Adobe Acrobat Reader'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: adobereader
 
 - name: 'Install Audacity'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: audacity
 
 - name: 'Install Postman'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: postman

@@ -1,5 +1,6 @@
 ---
 - name: 'Install Git'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: git
     package_params: /NoAutoCrlf

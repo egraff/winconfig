@@ -1,6 +1,7 @@
 ---
 - name: 'Install MSYS2'
   chocolatey.chocolatey.win_chocolatey:
+    state: present
     name: msys2
     package_params: /InstallDir:C:\msys64
 

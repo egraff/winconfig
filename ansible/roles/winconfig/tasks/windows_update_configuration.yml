@@ -1,6 +1,7 @@
 ---
 - name: 'Configure Automatic Updates: Enabled'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
     name: NoAutoUpdate
     data: 0
@@ -8,6 +9,7 @@
 
 - name: 'Configure Automatic Updates: Auto download and notify for install'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
     name: AUOptions
     data: 3
@@ -15,6 +17,7 @@
 
 - name: 'No auto-restart with logged on users for scheduled automatic updates installations: Enabled'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
     name: NoAutoRebootWithLoggedOnUsers
     data: 1

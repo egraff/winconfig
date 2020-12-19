@@ -90,7 +90,6 @@
 - name: 'Terminal: enable quick edit (default user)'
   ansible.windows.win_regedit:
     state: present
-    state: present
     path: HKU:\.DEFAULT\Console
     name: QuickEdit
     data: 1

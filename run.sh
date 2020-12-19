@@ -3,7 +3,6 @@
 # Note: this script is based on the setup script from msysGit
 # (/share/msysGit/net/setup-msysgit.sh)
 
-ORIG_PATH=$PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin:$PATH"
 
 error () {

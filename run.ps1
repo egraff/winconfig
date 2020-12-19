@@ -18,7 +18,7 @@ try
   }
 
   cd ansible
-  & ..\msys64\usr\bin\sh.exe /run.sh
+  & ..\msys64\usr\bin\sh.exe ./run.sh
 }
 finally
 {

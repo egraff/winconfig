@@ -18,6 +18,7 @@ echo "-------------------------------------------------------"
 echo "Running Ansible (will prompt for username and password)"
 echo "-------------------------------------------------------"
 
+cd ansible
 ansible-playbook site.yml -v
 
 echo "DONE!"

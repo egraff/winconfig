@@ -13,7 +13,7 @@ cache:
   - '%MSYS2_DIR%\var\cache\pacman'
 
 install:
-    '%MSYS2_BASH% --login -c "curl -fsSLOJ https://github.com/egraff/winsible/releases/download/v0.1.0/winsible.7z"'
+  - '%MSYS2_BASH% --login -c "curl -fsSLOJ https://github.com/egraff/winsible/releases/download/v0.1.0/winsible.7z"'
   - '%MSYS2_BASH% --login -c "curl -fsSLOJ https://github.com/chrislake/7zsfxmm/releases/download/1.7.0.3900/7zsd_extra_170_3900.7z"'
   - '%MSYS2_BASH% --login -c "TARGET_DIR=`cd $APPVEYOR_BUILD_FOLDER && pwd` && mkdir $TARGET_DIR/7zsd_extra && 7z e 7zsd_extra_170_3900.7z -o$TARGET_DIR/7zsd_extra"'
 

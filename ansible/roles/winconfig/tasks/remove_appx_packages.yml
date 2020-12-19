@@ -1,0 +1,9 @@
+---
+- name: 'Copy remove_appx_packages.ps1 to host'
+  ansible.windows.win_copy:
+    src: files/remove_appx_packages.ps1
+    dest: 'C:\temp\'
+    remote_src: no
+
+- name: 'Remove unwanted Appx packages'
+  ansible.windows.win_command: powershell.exe -ExecutionPolicy ByPass -File C:\temp\remove_appx_packages.ps1

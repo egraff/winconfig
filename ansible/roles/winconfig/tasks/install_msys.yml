@@ -1,0 +1,30 @@
+---
+- name: 'Install MSYS2'
+  chocolatey.chocolatey.win_chocolatey:
+    state: present
+    name: msys2
+    package_params: /InstallDir:C:\msys64
+
+- name: 'Update MSYS2'
+  ansible.windows.win_command: >-
+    C:\msys64\usr\bin\bash.exe --login -c "pacman -Syuu --noconfirm"
+
+- name: 'MSYS2: install mingw-w64-x86_64-toolchain'
+  ansible.windows.win_command: >-
+    C:\msys64\usr\bin\bash.exe --login -c "pacman -S --noconfirm --needed mingw-w64-x86_64-toolchain"
+
+- name: 'MSYS2: install mingw-w64-i686-toolchain'
+  ansible.windows.win_command: >-
+    C:\msys64\usr\bin\bash.exe --login -c "pacman -S --noconfirm --needed mingw-w64-i686-toolchain"
+
+- name: 'MSYS2: install base-devel'
+  ansible.windows.win_command: >-
+    C:\msys64\usr\bin\bash.exe --login -c "pacman -S --noconfirm --needed base-devel"
+
+- name: 'MSYS2: install cmake'
+  ansible.windows.win_command: >-
+    C:\msys64\usr\bin\bash.exe --login -c "pacman -S --noconfirm --needed cmake"
+
+- name: 'MSYS2: install mingw-w64-x86_64-clang'
+  ansible.windows.win_command: >-
+    C:\msys64\usr\bin\bash.exe --login -c "pacman -S --noconfirm --needed mingw-w64-x86_64-clang"

@@ -1,0 +1,5 @@
+---
+- name: 'Install Notepad++'
+  chocolatey.chocolatey.win_chocolatey:
+    state: present
+    name: notepadplusplus

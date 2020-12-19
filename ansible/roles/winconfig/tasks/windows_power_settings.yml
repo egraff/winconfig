@@ -6,10 +6,12 @@
     remote_src: no
 
 - name: 'Grant FullControl to HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes'
-  ansible.windows.win_command: powershell.exe -ExecutionPolicy ByPass -File C:\temp\registry_key_grant_full_control.ps1 -RegistryKeyPath "HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes" -User "BUILTIN\Administrators"
+  ansible.windows.win_command: >
+    powershell.exe -ExecutionPolicy ByPass -File C:\temp\registry_key_grant_full_control.ps1 -RegistryKeyPath "HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes" -User "BUILTIN\Administrators"
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Lid close action -> Plugged in: Do nothing'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\4f971e89-eebd-4455-a8de-9e59040e7347\5ca83367-6e45-459f-a27b-476b1d01c936
     name: ACSettingIndex
     data: 0
@@ -17,6 +19,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Lid close action -> On battery: Do nothing'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\4f971e89-eebd-4455-a8de-9e59040e7347\5ca83367-6e45-459f-a27b-476b1d01c936
     name: DCSettingIndex
     data: 0
@@ -24,6 +27,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Intel(R) Graphics Settings -> Intel(R) Graphics Power Plan -> Plugged in: Balanced'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\44f3beca-a7c0-460e-9df2-bb8b99e0cba6\3619c3f2-afb2-4afc-b0e9-e7fef372de36
     name: ACSettingIndex
     data: 1
@@ -31,6 +35,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Intel(R) Graphics Settings -> Intel(R) Graphics Power Plan -> On battery: Balanced'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\44f3beca-a7c0-460e-9df2-bb8b99e0cba6\3619c3f2-afb2-4afc-b0e9-e7fef372de36
     name: DCSettingIndex
     data: 1
@@ -38,6 +43,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> USB settings -> USB selective suspend settings -> Plugged in: Disabled'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\2a737441-1930-4402-8d77-b2bebba308a3\48e6b7a6-50f5-4782-a5d4-53bb8f07e226
     name: ACSettingIndex
     data: 0
@@ -45,6 +51,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> USB settings -> USB selective suspend settings -> On battery: Disabled'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\2a737441-1930-4402-8d77-b2bebba308a3\48e6b7a6-50f5-4782-a5d4-53bb8f07e226
     name: DCSettingIndex
     data: 0
@@ -52,6 +59,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Sleep -> Sleep after -> Plugged in: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\238c9fa8-0aad-41ed-83f4-97be242c8f20\29f6c1db-86da-48c5-9fdb-f2b67b1f44da
     name: ACSettingIndex
     data: 0
@@ -59,6 +67,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Sleep -> Sleep after -> On battery: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\238c9fa8-0aad-41ed-83f4-97be242c8f20\29f6c1db-86da-48c5-9fdb-f2b67b1f44da
     name: DCSettingIndex
     data: 0
@@ -66,6 +75,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Sleep -> Hibernate after -> Plugged in: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\238c9fa8-0aad-41ed-83f4-97be242c8f20\9d7815a6-7ee4-497e-8888-515a05f02364
     name: ACSettingIndex
     data: 0
@@ -73,6 +83,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Sleep -> Hibernate after -> On battery: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\238c9fa8-0aad-41ed-83f4-97be242c8f20\9d7815a6-7ee4-497e-8888-515a05f02364
     name: DCSettingIndex
     data: 0
@@ -80,6 +91,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Sleep -> Allow wake timers -> Plugged in: Important Wake Timers Only'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\238c9fa8-0aad-41ed-83f4-97be242c8f20\bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d
     name: ACSettingIndex
     data: 2
@@ -87,6 +99,7 @@
 
 - name: 'Power Settings -> Power scheme 381b4222-f694-41f0-9685-ff5bb260df2e (Balanced) -> Sleep -> Allow wake timers -> On battery: Disable'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\238c9fa8-0aad-41ed-83f4-97be242c8f20\bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d
     name: DCSettingIndex
     data: 0
@@ -94,6 +107,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Lid close action -> Plugged in: Do nothing'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\4f971e89-eebd-4455-a8de-9e59040e7347\5ca83367-6e45-459f-a27b-476b1d01c936
     name: ACSettingIndex
     data: 0
@@ -101,6 +115,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Lid close action -> On battery: Do nothing'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\4f971e89-eebd-4455-a8de-9e59040e7347\5ca83367-6e45-459f-a27b-476b1d01c936
     name: DCSettingIndex
     data: 0
@@ -108,6 +123,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Intel(R) Graphics Settings -> Intel(R) Graphics Power Plan -> Plugged in: Maximum Performance'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\44f3beca-a7c0-460e-9df2-bb8b99e0cba6\3619c3f2-afb2-4afc-b0e9-e7fef372de36
     name: ACSettingIndex
     data: 2
@@ -115,6 +131,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Intel(R) Graphics Settings -> Intel(R) Graphics Power Plan -> On battery: Maximum Performance'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\44f3beca-a7c0-460e-9df2-bb8b99e0cba6\3619c3f2-afb2-4afc-b0e9-e7fef372de36
     name: DCSettingIndex
     data: 2
@@ -122,6 +139,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> USB settings -> USB selective suspend settings -> Plugged in: Disabled'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\2a737441-1930-4402-8d77-b2bebba308a3\48e6b7a6-50f5-4782-a5d4-53bb8f07e226
     name: ACSettingIndex
     data: 0
@@ -129,6 +147,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> USB settings -> USB selective suspend settings -> On battery: Disabled'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\2a737441-1930-4402-8d77-b2bebba308a3\48e6b7a6-50f5-4782-a5d4-53bb8f07e226
     name: DCSettingIndex
     data: 0
@@ -136,6 +155,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Sleep -> Sleep after -> Plugged in: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\238c9fa8-0aad-41ed-83f4-97be242c8f20\29f6c1db-86da-48c5-9fdb-f2b67b1f44da
     name: ACSettingIndex
     data: 0
@@ -143,6 +163,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Sleep -> Sleep after -> On battery: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\238c9fa8-0aad-41ed-83f4-97be242c8f20\29f6c1db-86da-48c5-9fdb-f2b67b1f44da
     name: DCSettingIndex
     data: 0
@@ -150,6 +171,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Sleep -> Hibernate after -> Plugged in: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\238c9fa8-0aad-41ed-83f4-97be242c8f20\9d7815a6-7ee4-497e-8888-515a05f02364
     name: ACSettingIndex
     data: 0
@@ -157,6 +179,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Sleep -> Hibernate after -> On battery: Never'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\238c9fa8-0aad-41ed-83f4-97be242c8f20\9d7815a6-7ee4-497e-8888-515a05f02364
     name: DCSettingIndex
     data: 0
@@ -164,6 +187,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Sleep -> Allow wake timers -> Plugged in: Important Wake Timers Only'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\238c9fa8-0aad-41ed-83f4-97be242c8f20\bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d
     name: ACSettingIndex
     data: 2
@@ -171,6 +195,7 @@
 
 - name: 'Power Settings -> Power scheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (High performance) -> Sleep -> Allow wake timers -> On battery: Disable'
   ansible.windows.win_regedit:
+    state: present
     path: HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\238c9fa8-0aad-41ed-83f4-97be242c8f20\bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d
     name: DCSettingIndex
     data: 0

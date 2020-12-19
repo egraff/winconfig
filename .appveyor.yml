@@ -14,24 +14,11 @@ cache:
 
 install:
   - '%MSYS2_BASH% --login -c "pacman -Syu --noconfirm"'
-  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed base-devel msys2-devel gcc"'
-  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed python3 python3-pip"'
-  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed libffi libffi-devel"'
-  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed openssl openssl-devel libcrypt libcrypt-devel"'
-  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed libyaml-devel"'
-  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed git openssh rsync tar"'
+  - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed git openssl rsync p7zip"'
   - '%MSYS2_BASH% --login -c "pacman -S --noconfirm --needed p7zip"'
 
-  - ps: Get-Process | Where-Object { $_.Path -like "${env:MSYS2_DIR}*" } | Stop-Process
-  - '%MSYS2_ASH% -c "/usr/bin/rebaseall -v"'
-
-  - '%MSYS2_BASH% --login -c "python3 -mpip install ''pywinrm>=0.3.0''"'
-  - '%MSYS2_BASH% --login -c "python3 -mpip install ansible"'
-
-  - ps: Get-Process | Where-Object { $_.Path -like "${env:MSYS2_DIR}*" } | Stop-Process
-  - '%MSYS2_ASH% -c "/usr/bin/rebaseall -v"'
-
-  - '%MSYS2_BASH% --login -c "curl -L -o 7zsd_extra_170_3900.7z https://github.com/chrislake/7zsfxmm/releases/download/1.7.0.3900/7zsd_extra_170_3900.7z"'
+  - '%MSYS2_BASH% --login -c "cd $APPVEYOR_BUILD_FOLDER && curl -fsSLOJ https://github.com/egraff/winsible/releases/download/v0.1.0/winsible.7z"'
+  - '%MSYS2_BASH% --login -c "curl -fsSLOJ https://github.com/chrislake/7zsfxmm/releases/download/1.7.0.3900/7zsd_extra_170_3900.7z"'
   - '%MSYS2_BASH% --login -c "TARGET_DIR=`cd $APPVEYOR_BUILD_FOLDER && pwd` && mkdir $TARGET_DIR/7zsd_extra && 7z e 7zsd_extra_170_3900.7z -o$TARGET_DIR/7zsd_extra"'
 
 build_script:
@@ -41,7 +28,3 @@ artifacts:
   - path: winconfig-install.exe
     name: installer
     type: file
-
-# https://www.appveyor.com/docs/how-to/rdp-to-build-worker/
-on_failure:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))

@@ -38,3 +38,17 @@
     name: HideFileExt
     data: 0
     type: dword
+
+- name: 'Read UserPreferencesMask'
+  ansible.windows.win_reg_stat:
+    path: HKCU:\Control Panel\Desktop
+    name: UserPreferencesMask
+  register: user_preferences_mask
+
+- name: 'Disable ClickLock'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\Desktop
+    name: UserPreferencesMask
+    data: '{{ user_preferences_mask.value[:1] + [ user_preferences_mask.value[1] | bitwise_and("0x7f" | int(base=16)) ] + user_preferences_mask.value[2:] }}'
+    type: binary

@@ -4,3 +4,7 @@
     state: present
     name: git
     package_params: /NoAutoCrlf
+
+- name: 'Git config: enable long paths'
+  ansible.windows.win_command: >
+    git config --system core.longpaths true

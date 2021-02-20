@@ -3,3 +3,93 @@
   chocolatey.chocolatey.win_chocolatey:
     state: present
     name: notepadplusplus
+
+- name: 'Notepad++ :: default tab settings :: size=4'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\config.xml"
+    xpath: '/NotepadPlus/GUIConfigs/GUIConfig[@name="TabSetting"]'
+    type: attribute
+    attribute: size
+    fragment: 4
+
+- name: 'Notepad++ :: default tab settings :: replaceBySpace=yes'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\config.xml"
+    xpath: '/NotepadPlus/GUIConfigs/GUIConfig[@name="TabSetting"]'
+    type: attribute
+    attribute: replaceBySpace
+    fragment: yes
+
+- name: 'Notepad++ :: tab settings for C#'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="cs"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 132
+
+- name: 'Notepad++ :: tab settings for JSON'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="json"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 130
+
+- name: 'Notepad++ :: tab settings for LaTeX'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="latex"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 130
+
+- name: 'Notepad++ :: tab settings for Makefile'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="makefile"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 4
+
+- name: 'Notepad++ :: tab settings for PowerShell'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="powershell"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 130
+
+- name: 'Notepad++ :: tab settings for Python'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="python"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 132
+
+- name: 'Notepad++ :: tab settings for XML'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="xml"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 130
+
+- name: 'Notepad++ :: tab settings for YAML'
+  community.windows.win_xml:
+    state: present
+    path: "{{ lookup('env', 'APPDATA') }}\\Notepad++\\langs.xml"
+    xpath: '/NotepadPlus/Languages/Language[@name="yaml"]'
+    type: attribute
+    attribute: tabSettings
+    fragment: 130

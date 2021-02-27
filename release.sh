@@ -24,6 +24,9 @@ cd "$TMPDIR"
 
 (cd .. && test ! -f "$TMPPACK" || rm "$TMPPACK")
 
+echo "Extracting winsible archive"
+7z e "$SHARE/winsible.7z"
+
 echo "Copying files"
 
 mkdir -p msys64/etc
@@ -32,12 +35,13 @@ cp "$SHARE"/run.sh run.sh
 cp "$SHARE"/run.ps1 run.ps1
 rsync --archive -v "$SHARE"/ansible/ ansible/
 
+echo "Installing ansible collections"
+
 msys64/usr/bin/sh.exe -c 'cd ansible && PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin" ansible-galaxy collection install -f -r roles/requirements'
 
 echo "Creating archive"
 
 cd ..
-cp "$SHARE/winsible.7z" "$TMPPACK"
 /usr/bin/7za a $OPTS7 "$TMPPACK" ${TMPDIR}/*
 (cat "$SHARE"/7zsd_extra/7zsd_All_x64.sfx &&
  echo ';!@Install@!UTF-8!' &&

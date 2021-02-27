@@ -32,7 +32,7 @@ cp "$SHARE"/run.sh run.sh
 cp "$SHARE"/run.ps1 run.ps1
 rsync --archive -v "$SHARE"/ansible/ ansible/
 
-msys64/usr/bin/sh -c 'cd ansible && PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin" ansible-galaxy collection install -f -r roles/requirements'
+msys64/usr/bin/sh.exe -c 'cd ansible && PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin" ansible-galaxy collection install -f -r roles/requirements'
 
 echo "Creating archive"
 

@@ -25,7 +25,7 @@ cd "$TMPDIR"
 (cd .. && test ! -f "$TMPPACK" || rm "$TMPPACK")
 
 echo "Extracting winsible archive"
-7z e "$SHARE/winsible.7z"
+/usr/bin/7za x "$SHARE/winsible.7z"
 
 echo "Copying files"
 

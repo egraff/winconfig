@@ -37,7 +37,7 @@ rsync --archive -v "$SHARE"/ansible/ ansible/
 
 echo "Installing ansible collections"
 
-msys64/usr/bin/sh.exe -c 'cd ansible && PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin" && ansible-galaxy collection install -f -r roles/requirements'
+env -i msys64/usr/bin/sh.exe -c 'cd ansible && PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin" ansible-galaxy collection install -f -r roles/requirements'
 
 echo "Creating archive"
 

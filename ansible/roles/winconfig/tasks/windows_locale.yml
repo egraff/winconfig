@@ -1,0 +1,640 @@
+---
+- name: 'Windows date, time & regional formatting (current user): iCalendarType'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iCalendarType
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iCountry'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iCountry
+    data: '47'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iCurrDigits'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iCurrDigits
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iCurrency'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iCurrency
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iDate
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iDigits'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iDigits
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iFirstDayOfWeek'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iFirstDayOfWeek
+    data: '0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iFirstWeekOfYear'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iFirstWeekOfYear
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iLZero'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iLZero
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iMeasure'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iMeasure
+    data: '0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iNegCurr'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iNegCurr
+    data: '9'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iNegNumber'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iNegNumber
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iPaperSize'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iPaperSize
+    data: '9'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iTimePrefix'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iTimePrefix
+    data: '0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): iTLZero'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: iTLZero
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): Locale'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: Locale
+    data: '00000414'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): LocaleName'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: LocaleName
+    data: 'nb-NO'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): NumShape'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: NumShape
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): s1159'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: s1159
+    data: 'a.m.'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): s2359'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: s2359
+    data: 'p.m.'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sCountry'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sCountry
+    data: 'Norway'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sCurrency'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sCurrency
+    data: 'kr'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sDate
+    data: '.'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sDecimal'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sDecimal
+    data: ','
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sGrouping'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sGrouping
+    data: '3;0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sLanguage'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sLanguage
+    data: 'NOR'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sList'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sList
+    data: ';'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sLongDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sLongDate
+    data: 'dddd d. MMMM yyyy'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sMonDecimalSep'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sMonDecimalSep
+    data: ','
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sMonGrouping'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sMonGrouping
+    data: '3;0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sMonThousandSep'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sMonThousandSep
+    data: ' '
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sNativeDigits'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sNativeDigits
+    data: '0123456789'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sNegativeSign'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sNegativeSign
+    data: '-'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sPositiveSign'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sPositiveSign
+    data: ''
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sShortDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sShortDate
+    data: 'dd.MM.yyyy'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sShortTime'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sShortTime
+    data: 'HH:mm'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sThousand'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sThousand
+    data: ' '
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sTime'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sTime
+    data: ':'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sTimeFormat'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sTimeFormat
+    data: 'HH:mm:ss'
+    type: string
+
+- name: 'Windows date, time & regional formatting (current user): sYearMonth'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKCU:\Control Panel\International
+    name: sYearMonth
+    data: 'MMMM yyyy'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iCalendarType'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iCalendarType
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iCountry'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iCountry
+    data: '47'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iCurrDigits'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iCurrDigits
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iCurrency'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iCurrency
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iDate
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iDigits'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iDigits
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iFirstDayOfWeek'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iFirstDayOfWeek
+    data: '0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iFirstWeekOfYear'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iFirstWeekOfYear
+    data: '2'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iLZero'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iLZero
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iMeasure'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iMeasure
+    data: '0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iNegCurr'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iNegCurr
+    data: '9'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iNegNumber'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iNegNumber
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iPaperSize'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iPaperSize
+    data: '9'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iTimePrefix'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iTimePrefix
+    data: '0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): iTLZero'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: iTLZero
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): Locale'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: Locale
+    data: '00000414'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): LocaleName'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: LocaleName
+    data: 'nb-NO'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): NumShape'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: NumShape
+    data: '1'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): s1159'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: s1159
+    data: 'a.m.'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): s2359'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: s2359
+    data: 'p.m.'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sCountry'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sCountry
+    data: 'Norway'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sCurrency'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sCurrency
+    data: 'kr'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sDate
+    data: '.'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sDecimal'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sDecimal
+    data: ','
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sGrouping'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sGrouping
+    data: '3;0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sLanguage'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sLanguage
+    data: 'NOR'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sList'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sList
+    data: ';'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sLongDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sLongDate
+    data: 'dddd d. MMMM yyyy'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sMonDecimalSep'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sMonDecimalSep
+    data: ','
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sMonGrouping'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sMonGrouping
+    data: '3;0'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sMonThousandSep'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sMonThousandSep
+    data: ' '
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sNativeDigits'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sNativeDigits
+    data: '0123456789'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sNegativeSign'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sNegativeSign
+    data: '-'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sPositiveSign'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sPositiveSign
+    data: ''
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sShortDate'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sShortDate
+    data: 'dd.MM.yyyy'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sShortTime'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sShortTime
+    data: 'HH:mm'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sThousand'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sThousand
+    data: ' '
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sTime'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sTime
+    data: ':'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sTimeFormat'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sTimeFormat
+    data: 'HH:mm:ss'
+    type: string
+
+- name: 'Windows date, time & regional formatting (default user): sYearMonth'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKU:\.DEFAULT\Control Panel\International
+    name: sYearMonth
+    data: 'MMMM yyyy'
+    type: string

@@ -1,4 +1,12 @@
 ---
+- name: 'Disable fast startup'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\System
+    name: HiberbootEnabled
+    data: 0
+    type: dword
+
 - name: 'Copy registry_key_grant_full_control.ps1 to host'
   ansible.windows.win_copy:
     src: files/registry_key_grant_full_control.ps1

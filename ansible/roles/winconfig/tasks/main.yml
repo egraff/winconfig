@@ -11,6 +11,8 @@
 
 - import_tasks: windows_locale.yml
 
+- import_tasks: windows_security_policies.yml
+
 - import_tasks: install_choco_packages.yml
 
 - import_tasks: install_notepadplusplus.yml

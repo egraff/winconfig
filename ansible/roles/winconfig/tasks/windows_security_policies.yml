@@ -1,0 +1,8 @@
+---
+- name: 'Set security option: Interactive logon: Machine inactivity limit: 15 minutes'
+  ansible.windows.win_regedit:
+    state: present
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: InactivityTimeoutSecs
+    data: 900
+    type: dword

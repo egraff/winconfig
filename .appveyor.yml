@@ -22,7 +22,6 @@ install:
   - '%MSYS2_BASH% --login -c "TARGET_DIR=`cd $APPVEYOR_BUILD_FOLDER && pwd` && mkdir $TARGET_DIR/7zsd_extra && 7z e 7zsd_extra_170_3900.7z -o$TARGET_DIR/7zsd_extra"'
 
 build_script:
-  - false
   - '%MSYS2_BASH% --login -c "cd $APPVEYOR_BUILD_FOLDER && ./release.sh"'
 
 artifacts:

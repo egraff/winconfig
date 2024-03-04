@@ -39,7 +39,7 @@ echo "Installing ansible collections"
 
 # Note: I haven't figured out how to enter the other MSYS environment from the first, without "inheriting" state
 # that determines where the MSYS FS is rooted, so use powershell.exe as a wrapper to avoid this problem for now...
-powershell.exe -Command '& .\msys64\usr\bin\sh.exe -c "cd ansible && export PATH=\"/usr/local/bin:/usr/bin:/bin:/opt/bin\" && ansible-galaxy collection install -f -r roles/requirements.yml"'
+powershell.exe -Command '& .\msys64\usr\bin\sh.exe -c "cd ansible && export PATH=`"/usr/local/bin:/usr/bin:/bin:/opt/bin`" && ansible-galaxy collection install -f -r roles/requirements.yml"'
 
 echo "Creating archive"
 
